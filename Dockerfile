@@ -39,9 +39,6 @@ WORKDIR ${SRC_DIR}
 RUN chown ${USER}:${GROUP} ${SRC_DIR}
 COPY --chown=${USER}:${GROUP} requirements.txt requirements.txt
 
-# installs buildozer and dependencies
+# install dependencies
 RUN pip3 install --upgrade pip && \
-    pip3 install --no-cache-dir -r requirements.txt && \
-    pip3 install notebook
-
-# ENTRYPOINT [""]
+    pip3 install --no-cache-dir -r requirements.txt
